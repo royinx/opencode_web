@@ -7,6 +7,23 @@
 ```bash
 # Copy docker-compose to your project directory
 docker compose up -d
+
+# or 
+
+docker run -d \
+  --name opencode_web \
+  --hostname opencode_web \
+  --restart unless-stopped \
+  --shm-size 10gb \
+  --oom-kill-disable \
+  -t \
+  -e VITE_TERMINAL_WS_PORT=2201 \
+  -p 2200:8080 \
+  -p 2201:8081 \
+  -v "$(pwd)/session_history/":"/root/.local/share/opencode/storage/message/" \
+  -v "$(pwd)/opencode_cfg/":"/root/.config/opencode/" \
+  -v "$(pwd)/vide_code_dir/":"/app" \
+  royinx/opencode_web
 ```
 
 ## 🚀 Key Features
