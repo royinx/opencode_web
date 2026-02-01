@@ -5,6 +5,7 @@
 
 ## Installation
 ```bash
+# Copy docker-compose to your project directory
 docker compose up -d
 ```
 
