@@ -1,0 +1,22 @@
+services:
+    opencode_web:
+        container_name: opencode_web
+        image: royinx/opencode_web
+        # build:
+        #     context: .
+        #     dockerfile: Dockerfile
+        hostname: opencode_web
+        restart: unless-stopped
+        shm_size: '10gb'
+        oom_kill_disable: true
+        tty: true
+        environment:
+            - VITE_TERMINAL_WS_PORT=2201 # if not set, default is 2021 
+        ports:
+            - "2200:8080" 
+            - "2201:8081" # align to VITE_TERMINAL_WS_PORT
+
+        volumes:
+            - ./session_history/:/root/.local/share/opencode/storage/message/ # token record
+            - ./opencode_cfg/:/root/.config/opencode/ # Agent config
+            - ./vide_code_dir/:/app # Project Directory

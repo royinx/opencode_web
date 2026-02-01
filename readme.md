@@ -1,7 +1,8 @@
 # OpenCode Web
+**OpenCode Web** is a containerized environment designed to run remote OpenCode instances via a web interface. It provides a robust, VS Code-inspired layout for seamless remote development and terminal management.
+
 ![](img/default.png)
 
-**OpenCode Web** is a containerized environment designed to run remote OpenCode instances via a web interface. It provides a robust, VS Code-inspired layout for seamless remote development and terminal management.
 
 ## 🚀 Key Features
 
